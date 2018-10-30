@@ -1,0 +1,63 @@
+.comfoot{
+    font-size:24px;
+    .fresh-app-tab-bar {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
+    .fresh-app-tab-bar {
+        z-index: 99;
+    }
+    .mn-tab-bar, .mn-tab-bar-items {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .mn-tab-bar {
+        background: #fafafa;
+        height: 1.5rem;
+        white-space: nowrap;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    .mn-tab-bar-items {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        min-width: 400px;
+    }
+    .fresh-tab-bar-item.is-active {
+        color: #49aa34!important;
+    }
+    .mn-tab-bar-item.is-active {
+        color: #2ac845;
+    }
+    .mn-tab-bar-item {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        text-align: center;
+        color: #999;
+        cursor: pointer;
+    }
+    .fresh-tab-bar-item.small .mn-tab-bar-icon .mn-icon {
+        width: 24px!important;
+        height: 24px!important;
+    }
+    .mn-icon {
+        display: inline-block;
+        fill: currentColor;
+        text-align: center;
+    }
+    
+}
