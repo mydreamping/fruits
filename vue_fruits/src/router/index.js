@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 import  Home from './../components/page/home.vue'
 import  City from './../components/element/city.vue'
-
+import  Search from './../components/element/search.vue'
 
 const router = new VueRouter({
     routes : [{
@@ -18,6 +18,11 @@ const router = new VueRouter({
         path:'/city',
         name:'city',
         component:City,
+        
+    },{
+        path:'/search',
+        name:'search',
+        component:Search,
         
     }]
 })

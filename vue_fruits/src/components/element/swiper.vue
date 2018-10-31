@@ -9,7 +9,7 @@
     </div>
 </template>
 
-<style src="./swiper.scss" lang="scss" scoped>
+<style src="./scss/swiper.scss" lang="scss" scoped>
 </style>
 
 
@@ -33,8 +33,8 @@ export default {
         },
         url: "/dt/sh/Home/AdvertisementPhotoshootRequest?sourcetype=9&json=%7B%22TypeCode%22:1011,%22PlatForm%22:1500%7D"
       }).then(function(response) {
-        console.log(response);
-        console.log(response.data.Data);
+        // console.log(response);
+        // console.log(response.data.Data);
         var data = response.data.Data;
         self.total = data;
         

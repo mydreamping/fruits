@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style src="./pannel.scss" lang="scss" scoped>
+<style src="./scss/pannel.scss" lang="scss" scoped>
 
 
 </style>

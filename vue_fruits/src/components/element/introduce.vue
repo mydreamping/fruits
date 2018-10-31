@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style src="./introduce.scss" lang="scss" scoped>
+<style src="./scss/introduce.scss" lang="scss" scoped>
 </style>
 
 
@@ -31,16 +31,17 @@ export default {
         },
         url: "/dt/sh/Home/DefaultHomeV2Request"
       }).then(function(response) {
-        console.log(response);
-        console.log(response.data.Data);
+        // console.log(response);
+        // console.log(response.data.Data);
         var data = response.data.Data;
         // 现在这里的total就是遍历出来的所需数据
         self.total = data.HomeTabInfos[0].SellPoints;
-        console.log(data.HomeTabInfos[0].SellPoints);
+        // console.log(data.HomeTabInfos[0].SellPoints);
         
       });
+      
     },
-   
+    
   },
   mounted() {
     this.getData();

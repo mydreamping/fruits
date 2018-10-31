@@ -37,7 +37,7 @@
     </div>
 </template>
 
-<style src="./comfoot.scss" lang="scss" scoped>
+<style src="./scss/comfoot.scss" lang="scss" scoped>
 
 
 </style>
