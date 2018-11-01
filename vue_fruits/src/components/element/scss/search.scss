@@ -33,104 +33,108 @@
     //     -webkit-flex: 1;
     //     flex: 1;
     // }
-    .mn-section {
-        margin-bottom: .1rem;
-    }
-    section {
-        display: block;
-    }
-    .search-input{
-        margin: 0;
-    }
-    .mn-card {
-        margin-bottom: 10px!important;
-        border-radius: 0!important;
-    }
-    .mn-card {
-        margin-bottom: .1rem;
-        border-radius: .75rem;
-        background-color: #fff;
-        box-shadow: 0 0 2px rgba(0,0,0,.02);
-        overflow: hidden;
-    }
-    .search-input .mn-card-item{
-        padding: .3rem .2rem;
-    }
-    .mn-card-item {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        padding: .1rem;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-    .mn-card-body {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        flex: 1;
-    }
-    .search-input .mn-card-item input{
-        background-color: #f0f0f0;
-        padding-left: .3rem;
-        border-radius: 10px;
-        // width: 100%;
-        width:7rem;
-        height: .8rem;
-        line-height: 2;
-        border: none;
-        outline: none;
-        -webkit-appearance: none;
-    }
-     input {
-        font-family: sans-serif;
-        font-size: 100%;
-        // line-height: 1.15;
-        margin: 0;
-        overflow: visible;
-    }
-    .mn-card-body.is-action {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        margin-top: -.1rem;
-        margin-bottom: -.1rem;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-    .search-input .mn-card-item .mn-btn{
-        border-radius: 5px;
-    }
-    .mn-btn.is-primary {
-        background-color: #4cd964;
-        color: #fff;
-    }
-    .mn-btn.is-sm {
-        height: .8rem;
-        padding: .1rem .4rem;
-        border-radius: .25rem;
-        font-size: .35rem;
-        margin-left:.3rem;
-    }
-    .mn-btn {
-        display: inline-block;
-        white-space: nowrap;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        height: 1rem;
-        line-height: .1.5rem;
-        padding: .625rem 1rem;
-        border-radius: .75rem;
-        text-decoration: none;
-        border: none;
-        outline: none;
-        background: transparent;
-        vertical-align: middle;
-    }
+
+    //搜索框 
+    // .mn-section {
+    //     margin-bottom: .1rem;
+    // }
+    // section {
+    //     display: block;
+    // }
+    // .search-input{
+    //     margin: 0;
+    // }
+    // .mn-card {
+    //     margin-bottom: 10px!important;
+    //     border-radius: 0!important;
+    // }
+    // .mn-card {
+    //     margin-bottom: .1rem;
+    //     border-radius: .75rem;
+    //     background-color: #fff;
+    //     box-shadow: 0 0 2px rgba(0,0,0,.02);
+    //     overflow: hidden;
+    // }
+    // .search-input .mn-card-item{
+    //     padding: .3rem .2rem;
+    // }
+    // .mn-card-item {
+    //     display: -webkit-box;
+    //     display: -webkit-flex;
+    //     display: flex;
+    //     padding: .1rem;
+    //     -webkit-box-align: center;
+    //     -webkit-align-items: center;
+    //     align-items: center;
+    // }
+    // .mn-card-body {
+    //     -webkit-box-flex: 1;
+    //     -webkit-flex: 1;
+    //     flex: 1;
+    // }
+    // .search-input .mn-card-item input{
+    //     background-color: #f0f0f0;
+    //     padding-left: .3rem;
+    //     border-radius: 10px;
+    //     // width: 100%;
+    //     width:7.8rem;
+    //     height: .8rem;
+    //     line-height: 2;
+    //     border: none;
+    //     outline: none;
+    //     -webkit-appearance: none;
+    // }
+    //  input {
+    //     font-family: sans-serif;
+    //     font-size: 100%;
+    //     // line-height: 1.15;
+    //     margin: 0;
+    //     overflow: visible;
+    // }
+    // .mn-card-body.is-action {
+    //     display: -webkit-box;
+    //     display: -webkit-flex;
+    //     display: flex;
+    //     margin-top: -.1rem;
+    //     margin-bottom: -.1rem;
+    //     -webkit-box-align: center;
+    //     -webkit-align-items: center;
+    //     align-items: center;
+    // }
+    // .search-input .mn-card-item .mn-btn{
+    //     border-radius: 5px;
+    // }
+    // .mn-btn.is-primary {
+    //     background-color: #4cd964;
+    //     color: #fff;
+    // }
+    // .mn-btn.is-sm {
+    //     height: .8rem;
+    //     padding: .1rem .4rem;
+    //     border-radius: .25rem;
+    //     font-size: .35rem;
+    //     margin-left:.3rem;
+    // }
+    // .mn-btn {
+    //     display: inline-block;
+    //     white-space: nowrap;
+    //     cursor: pointer;
+    //     -webkit-user-select: none;
+    //     -moz-user-select: none;
+    //     -ms-user-select: none;
+    //     user-select: none;
+    //     height: 1rem;
+    //     line-height: .1.5rem;
+    //     padding: .625rem 1rem;
+    //     border-radius: .75rem;
+    //     text-decoration: none;
+    //     border: none;
+    //     outline: none;
+    //     background: transparent;
+    //     vertical-align: middle;
+    // }
+
+
 
     .search-hotword{
         margin-top: 10px;
@@ -154,8 +158,8 @@
         text-align: center;
         background: #fff;
         margin: 1.5%;
-        font-size: .25rem;
-        padding: .2rem 0;
+        font-size: .35rem;
+        padding: .3rem 0;
     }
 
     .search-recent{
@@ -169,7 +173,7 @@
         background: #fff;
     }
     .search-recent .lists .clear-item{
-        font-size: .25rem;
+        font-size: .3rem;
         padding: .2rem 2rem;
         line-height: .5rem;
         text-align: center;
@@ -188,5 +192,41 @@
             border-top:1px solid #ccc;
             font-size:.35rem;
         }
+    }
+    .search-recent .lists .item{
+        border-bottom: 1px solid #eee;
+        font-size: .3rem;
+        padding: 0rem .5rem;
+        line-height: 1rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        border-bottom:1px solid #ccc;
+    }
+    .search-recent .lists .item p {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 90%;
+        flex: 0 0 90%;
+    }
+    .search-recent .lists .item span.close{
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        color: #999;
+        padding-left: .5rem;
+    }
+    .mn-icon {
+        display: inline-block;
+        fill: currentColor;
+        text-align: center;
+    }
+    svg:not(:root) {
+        overflow: hidden;
+    }
+    .mn-icon-svg>svg {
+        vertical-align: top;
     }
 }

@@ -7,6 +7,7 @@ Vue.use(VueRouter)
 import  Home from './../components/page/home.vue'
 import  City from './../components/element/city.vue'
 import  Search from './../components/element/search.vue'
+import Detail from './../components/page/detail.vue'
 
 const router = new VueRouter({
     routes : [{
@@ -23,7 +24,17 @@ const router = new VueRouter({
         path:'/search',
         name:'search',
         component:Search,
+        // redirect:'/search/detail',
+        // children:[{
+        //     path:'detail',
+        //     name:'detail',
+        //     component:Detail,
+        // }]
         
+    },{
+        path:'/detail',
+        name:'detail',
+        component:Detail, 
     }]
 })
 
