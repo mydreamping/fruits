@@ -1,33 +1,12 @@
 <template>
     
-    <div class="detail">
-          <shead />
+    <div class="default">
+         
           <div>
-              <!-- 排序 -->
-                <div  class="fresh-row" style="flex: 0 0 auto;">
-                  <div  class="category-filter">
-                    <div class="category-filter-item "  v-for="(item,index) in tabs" :class="{isactive:index == num}" @click="tab(index)" :key="index">{{item}}
-                    </div>
-                    <!-- <div class="category-filter-item"  >最新</div> 
-                    <div class="category-filter-item" >销量</div> 
-                    <div class="category-filter-item" >价格
-                        <div class="icon">
-                            <span class="mn-icon" style="width: .5rem; height: .5rem;">
-                              <span class="mn-icon-svg" style="width: .5rem; height: .5rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                  <polygon fill="#CCCCCC" points="9,14 16,7 23,14 "></polygon>
-                                  <polygon fill="#CCCCCC" points="23,18.001 16,25.001 9,18.001 "></polygon>
-                                </svg>
-                              </span>
-                            </span>
-                        </div>
-                    </div> -->
-                  </div> 
-                </div>
-                <!-- <Adefault /> -->
+
               <!-- 方框 -->
 
-              <!-- <div class="mn-scroller is-hide-bar">
+              <div class="mn-scroller is-hide-bar">
                 <div class="mn-scroller-contents">
                     <div class="product">
 
@@ -80,16 +59,21 @@
 
                 </div>
                 
-              </div> -->
+              </div>
+
+                <dfoot />
           </div>
-    
-        <router-view></router-view>
+
+        
+
     </div>
     
 </template>
 
 
-<style src="./scss/detail.scss" lang="scss" >
+<style src="./scss/default.scss" lang="scss" >
+
+
 </style>
 
 
@@ -97,73 +81,52 @@
 // import http from "./../../utils/HttpClient";
 
 import shead from "./../common/shead.vue";
-import Adefault from "./../detail/adefault.vue";
+import dfoot from "./../common/dfoot.vue";
 
 export default {
   data() {
     return {
-      listgoods: "", //获取存入来的参数
-      list: "", //商品
-      tabs: ["默认", "最新", "销量", "价格"],
-      num: 0
+      listgoods:"",//获取存入来的参数
+      list:"",//商品
     };
   },
   methods: {
-    //选项卡并跳转路由
-    tab(index) {
-      this.num = index;
-      // console.log(this.num);
-
-      switch (index) {
-        case 0:
-          this.$router.push("/detail/default");
-          break;
-        case 1:
-          this.$router.push("/detail/new");
-          break;
-        case 2:
-          this.$router.push("/detail/sale");
-          break;
-        case 3:
-          this.$router.push("/detail/price");
-          break;
-      }
-    },
-    // //获取路由的参数
+    //获取路由的参数
     getRouterData() {
       this.listgoods = this.$route.params.data;
-      console.log("detail", this.listgoods);
+      console.log(this.$route.params.data)
+      console.log('detail', this.listgoods);
     },
-    // // 获取数据
-    // getList() {
-    //   var self = this;
-    //   this.$http({
-    //     method: "GET",
-    //     params: {
-    //       sourcetype: 9,
-    //       Keyword: "早餐",
-    //       PageIndex: 1,
-    //       PageSize: 20,
-    //       OrderDirectionType: 0,
-    //       OrderFieldType: 0,
-    //       mode: 1
-    //     },
-    //     url: "/dt/sh/ProductRequests/SearchProductRequest?"
-    //   }).then(function(response) {
-    //     console.log(response);
-    //     console.log(response.data.Data.SourceData);
-    //     self.list = response.data.Data.SourceData;
-    //   });
-    // }
+    // 获取数据
+    getList() {
+      
+      var self = this;
+      this.$http({
+        method: "GET",
+        params: {
+          sourcetype: 9,
+          Keyword: "早餐",
+          PageIndex: 1,
+          PageSize: 20,
+          OrderDirectionType: 0,
+          OrderFieldType: 0,
+          mode: 1,
+        },
+        url: "/dt/sh/ProductRequests/SearchProductRequest?"
+      }).then(function(response) {
+        console.log(response);
+        console.log(response.data.Data.SourceData);
+        self.list = response.data.Data.SourceData;
+      });
+    },
   },
   components: {
     shead,
-    // Adefault
+    dfoot
   },
   mounted() {
     this.getRouterData();
-    // this.getList();
-    this.tab(0);
+    this.getList();
   }
 };
 </script>

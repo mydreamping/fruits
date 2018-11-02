@@ -27,9 +27,11 @@
                                  
                               </section>   -->
                                 <!-- 搜索框 -->
-                                 <shead :message="list" v-on:getlist="show"/>
-
-                                <div  class="search-hotword">
+                                <!-- 接收一组件子组件的传参 -->
+                                <shead :message="list" v-on:getlist="show"/>
+                                <!-- 给另一子组件传参 -->
+                                <stable :parentMessage="list" />
+                                <!-- <div  class="search-hotword">
                                     <p  class="title">热门搜索</p>
                                         <div  class="lists">
                                             <p  class="item" v-for="(t,index) in total" :key="index" @click="getidx(index)">{{t.HotWordName}}</p>
@@ -48,7 +50,7 @@
                                                         <path d="M21.262 10l-5.275 5.269-5.25-5.244-0.738 0.738 5.25 5.237-5.25 5.244 0.738 0.731 5.25-5.238 5.275 5.262 0.738-0.731-5.275-5.269 5.275-5.262z">
                                                         </path>
                                                     </svg>
-                                                    </span> <!---->
+                                                    </span> 
                                                 </span>
                                             </span>
                                         </div>
@@ -56,7 +58,7 @@
                                                 <p >清空搜索历史</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </section>
                             </div>
                         </div>
@@ -64,7 +66,7 @@
                 </div>
         </div>
 
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
     </div>
 </template>
 
@@ -74,41 +76,45 @@
 
 <script>
 import shead from "./../common/shead.vue";
+import stable from "./stable.vue";
 
 export default {
   data() {
     return {
       total: "",
-      value: "", //input输入的值
-      suggest: "", //模糊查询
+      //   value: "", //input输入的值
+      //   suggest: "", //模糊查询
       goods: "", //搜索值
-      list: [] //搜索记录
+      list: [], //搜索记录
+      
     };
   },
   components: {
-    shead
+    shead,
+    stable
   },
   methods: {
+    //   接收子组件的参数展示
     show: function(data) {
-    //   this.list = data;
+      //   this.list = data;
       this.list = data.split(",");
-      console.log(this);
+      //   console.log(this);
     },
     // p标签内容渲染
-    getData() {
-      var self = this;
-      this.$http({
-        method: "get",
-        parmas: {
-          sourcetype: 9
-        },
-        url: "/dt/wx/Products/ProductHotWordRequest"
-      }).then(function(response) {
-        // console.log(response.data.Data);
-        var data = response.data.Data;
-        self.total = data;
-      });
-    },
+    // getData() {
+    //   var self = this;
+    //   this.$http({
+    //     method: "get",
+    //     parmas: {
+    //       sourcetype: 9
+    //     },
+    //     url: "/dt/wx/Products/ProductHotWordRequest"
+    //   }).then(function(response) {
+    //     // console.log(response.data.Data);
+    //     var data = response.data.Data;
+    //     self.total = data;
+    //   });
+    // },
     // //获取搜索存入内存
     // getgoods(data) {
     //   this.goods = this.value;
@@ -122,40 +128,40 @@ export default {
     //   console.log(this.list);
     //   storage.setItem("goods", this.list);
     // },
-    // 获取localstorage
+    // // 获取localstorage
     getStorage() {
-      console.log(666);
+    //   console.log(666);
       var storage = window.localStorage;
       this.list = storage.getItem("goods");
 
       //   if (this.list > 0) {
       this.list = storage.getItem("goods").split(",");
       //   }
-      console.log(this.list);
-    },
-    //删除localstorage
-    deleteStorage(e) {
-      //   console.log(e);
       //   console.log(this.list);
-      this.list.splice(e, 1);
-      var storage = window.localStorage;
-      storage.setItem("goods", this.list);
-      //   console.log(this.list);
-    },
-    // 删除localstorage存入项
-    delStorage() {
-      localStorage.removeItem("goods");
-      this.list = "";
-    },
-    // 点击获取点击值
-    getidx(e) {
-      console.log(e);
-      console.log(this.total[e].HotWordName);
     }
+    // //删除localstorage
+    // deleteStorage(e) {
+    //   //   console.log(e);
+    //   //   console.log(this.list);
+    //   this.list.splice(e, 1);
+    //   var storage = window.localStorage;
+    //   storage.setItem("goods", this.list);
+    //   //   console.log(this.list);
+    // },
+    // // 删除localstorage存入项
+    // delStorage() {
+    //   localStorage.removeItem("goods");
+    //   this.list = "";
+    // },
+    // // 点击获取点击值
+    // getidx(e) {
+    //   console.log(e);
+    //   console.log(this.total[e].HotWordName);
+    // }
   },
   mounted() {
-    this.getData();
-    this.getStorage();
+    // this.getData();
+    // this.getStorage();
   }
 };
 </script>

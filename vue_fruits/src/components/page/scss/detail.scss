@@ -1,0 +1,165 @@
+.detail{
+    font-size:.35rem!important;
+    .fresh-row {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        
+    }
+    .category-filter {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        background: #fff;
+    }
+    .category-filter-item.isactive {
+        color: #49aa34;
+        border-bottom-color: #49aa34;
+    }
+    .category-filter-item {
+        width: 1.5rem;
+        text-align: center;
+        border-bottom: 3px solid transparent;
+        padding: .5rem 0 .5rem;
+        position: relative;
+        font-size:.3rem;
+    }
+
+
+    .category-filter-item .icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+    }
+    .mn-icon {
+        display: inline-block;
+        fill: currentColor;
+        text-align: center;
+    }
+    .mn-icon, .mn-icon-svg {
+        width: .5rem;
+        height: .5rem;
+    }
+
+    svg:not(:root) {
+        overflow: hidden;
+    }
+    
+    .mn-icon-svg>svg {
+        vertical-align: top;
+    }
+
+
+    .mn-scroller {
+        // position: absolute;
+        width: 100%;
+        height: 100%;
+        // overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    // .products{
+    //     display: -webkit-box;
+    //     display: -webkit-flex;
+    //     display: flex;
+    //     -webkit-flex-wrap: wrap;
+    //     flex-wrap: wrap;
+    //     padding: .25rem;
+    //     background:#ccc;
+    // }
+    // .product-item{
+    //     width: 50%;
+    //     padding: .25rem;
+    //     display: inline-block;
+    // }
+
+    // .product-item .inner{
+    //     background: #fff;
+    //     border-radius: .25rem;
+    //     overflow: hidden;
+    //     position: relative;
+    // }
+    // .product-item .image{
+    //     position: relative;
+    // }
+    // .product-item .image .is-freeze{
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 2rem;
+    // }
+    // .product-item .image img{
+    //     display: block;
+    //     width: 100%;
+    // }
+    // .products img {
+    //     border-radius: .25rem .25rem 0 0;
+    // }
+    // img {
+    //     border-style: none;
+    // }
+    // .product-item .title{
+    //     padding: .5rem .5rem 0;
+    //     width: 100%;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     white-space: nowrap;
+    // }
+    // .product-item .info{
+    //     padding: 0 .5rem;
+    //     margin-bottom: .5rem;
+    //     height: 1rem;
+    //     display: -webkit-box;
+    //     display: -webkit-flex;
+    //     display: flex;
+    //     -webkit-box-orient: vertical;
+    //     -webkit-box-direction: normal;
+    //     -webkit-flex-direction: column;
+    //     flex-direction: column;
+    //     -webkit-box-pack: justify;
+    //     -webkit-justify-content: space-between;
+    //     justify-content: space-between;
+    // }
+    // .product-item .unit{
+    //     color: #999899;
+    //     font-size: .5rem;
+    //     width: 100%;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     white-space: nowrap;
+    // }
+    // .product-item .price{
+    //     color: #f05423;
+    //     height: .25rem;
+    // }
+    // .product-item .action{
+    //     position: absolute;
+    //     bottom: .1rem;
+    //     right: .5rem;
+    //     width: 32px;
+    //     height: 32px;
+    //     display: -webkit-box;
+    //     display: -webkit-flex;
+    //     display: flex;
+    //     -webkit-box-pack: center;
+    //     -webkit-justify-content: center;
+    //     justify-content: center;
+    //     -webkit-box-align: end;
+    //     -webkit-align-items: flex-end;
+    //     align-items: flex-end;
+    //     border-radius: 16px;
+    // }
+}

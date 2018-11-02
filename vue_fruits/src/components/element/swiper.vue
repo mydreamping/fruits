@@ -27,7 +27,7 @@ export default {
       var self = this;
       this.$http({
         method: "get",
-        parmas: {
+        params: {
         //   sourcetype: 9,
         //   json: {"TypeCode":1011,"PlatForm":1500}
         },

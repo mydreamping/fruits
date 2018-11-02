@@ -52,7 +52,7 @@ export default {
       var self = this;
       this.$http({
         method: "get",
-        parmas: {
+        params: {
             sourcetype:9,
         },
         url: "/dt/sh/Basic/CityRouteRequest"
