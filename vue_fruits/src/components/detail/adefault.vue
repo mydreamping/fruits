@@ -64,8 +64,6 @@
                 <dfoot />
           </div>
 
-        
-
     </div>
     
 </template>
@@ -80,7 +78,7 @@
 <script>
 // import http from "./../../utils/HttpClient";
 
-import shead from "./../common/shead.vue";
+// import shead from "./../common/shead.vue";
 import dfoot from "./../common/dfoot.vue";
 
 export default {
@@ -96,6 +94,7 @@ export default {
       this.listgoods = this.$route.query.data;
       console.log(this.$route.query.data)
       console.log('detail', this.listgoods);
+      
     },
     // 获取数据
     getList() {
@@ -121,7 +120,7 @@ export default {
     },
   },
   components: {
-    shead,
+    // shead,
     dfoot
   },
   mounted() {

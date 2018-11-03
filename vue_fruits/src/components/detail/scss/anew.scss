@@ -1,0 +1,94 @@
+.anew{
+
+    .products{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: .25rem;
+        background:#ccc;
+    }
+    .product-item{
+        width: 50%;
+        padding: .25rem;
+        display: inline-block;
+    }
+
+    .product-item .inner{
+        background: #fff;
+        border-radius: .25rem;
+        overflow: hidden;
+        position: relative;
+    }
+    .product-item .image{
+        position: relative;
+    }
+    .product-item .image .is-freeze{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 2rem;
+    }
+    .product-item .image img{
+        display: block;
+        width: 100%;
+    }
+    .products img {
+        border-radius: .25rem .25rem 0 0;
+    }
+    img {
+        border-style: none;
+    }
+    .product-item .title{
+        padding: .5rem .5rem 0;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .product-item .info{
+        padding: 0 .5rem;
+        margin-bottom: .5rem;
+        height: 1rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+    .product-item .unit{
+        color: #999899;
+        font-size: .5rem;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .product-item .price{
+        color: #f05423;
+        height: .25rem;
+    }
+    .product-item .action{
+        position: absolute;
+        bottom: .1rem;
+        right: .5rem;
+        width: 32px;
+        height: 32px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: end;
+        -webkit-align-items: flex-end;
+        align-items: flex-end;
+        border-radius: 16px;
+    }
+}

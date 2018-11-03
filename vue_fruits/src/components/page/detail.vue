@@ -1,12 +1,14 @@
 <template>
     
     <div class="detail">
+      <div class="deta">
           <shead />
           <div>
               <!-- 排序 -->
                 <div  class="fresh-row" style="flex: 0 0 auto;">
                   <div  class="category-filter">
-                    <div class="category-filter-item "  v-for="(item,index) in tabs" :class="{isactive:index == num}" @click="tab(index)" :key="index">{{item}}
+                    <div class="category-filter-item "  v-for="(item,index) in tabs"  :class="{isactive:index == num}"  @click="tab(index)" :key="index">{{item.name}}
+                      <div v-show="item.show" v-html="icon"></div>
                     </div>
                     <!-- <div class="category-filter-item"  >最新</div> 
                     <div class="category-filter-item" >销量</div> 
@@ -82,7 +84,7 @@
                 
               </div> -->
           </div>
-    
+      </div>
         <router-view></router-view>
     </div>
     
@@ -90,6 +92,12 @@
 
 
 <style src="./scss/detail.scss" lang="scss" >
+</style>
+
+<style>
+.detail{
+  background-color: #f0f0f0;
+}
 </style>
 
 
@@ -104,36 +112,69 @@ export default {
     return {
       listgoods: "", //获取存入来的参数
       list: "", //商品
-      tabs: ["默认", "最新", "销量", "价格"],
-      num: 0
+      tabs:[{
+        name:"默认",
+        show:false
+      },{
+        name:"最新",
+        show:false
+      },{
+        name:"销量",
+        show:false
+      },{
+        name:"价格",
+        show:true
+      }],
+      num: 0,
+      bool:false,
+      icon: `<div class="icon">
+              <span class="mn-icon" style="width: .5rem; height: .5rem;">
+                <span class="mn-icon-svg" style="width: .5rem; height: .5rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <polygon fill="#CCCCCC" points="9,14 16,7 23,14 "></polygon>
+                    <polygon fill="#CCCCCC" points="23,18.001 16,25.001 9,18.001 "></polygon>
+                  </svg>
+                </span>
+              </span>
+          </div>`
     };
   },
   methods: {
     //选项卡并跳转路由
     tab(index) {
       this.num = index;
-      // console.log(this.num);
-
+      // console.log(this.num);\
+      console.log("aaa"+this.listgoods)
       switch (index) {
         case 0:
-          this.$router.push("/detail/default");
+          // this.$router.push("/detail/default");
+          location.href = `#/detail/default?data=${this.listgoods}`
           break;
         case 1:
-          this.$router.push("/detail/new");
+          // this.$router.push("/detail/new");
+          // this.$router.push({ name: 'new', params: { data: this.listgoods }})
+          location.href = `#/detail/new?data=${this.listgoods}`
           break;
         case 2:
-          this.$router.push("/detail/sale");
+          // this.$router.push("/detail/sale");
+          location.href = `#/detail/sale?data=${this.listgoods}`
           break;
         case 3:
-          this.$router.push("/detail/price");
+          // this.$router.push("/detail/price");
+          this.bool = !this.bool;
+          console.log(this.bool);
+          // location.href = `#/detail/price?data=${this.listgoods}`
+
+          this.$router.push({ name: 'price', query:{ data: this.listgoods ,bool:this.bool}})
+         
           break;
       }
     },
     // //获取路由的参数
-    // getRouterData() {
-    //   this.listgoods = this.$route.params.data;
-    //   console.log("detail", this.listgoods);
-    // },
+    getRouterData() {
+      this.listgoods = this.$route.query.data;
+      // console.log("detail4444", this.listgoods);
+    },
     // // 获取数据
     // getList() {
     //   var self = this;
@@ -161,7 +202,7 @@ export default {
     // Adefault
   },
   mounted() {
-    // this.getRouterData();
+    this.getRouterData();
     // this.getList();
     this.tab(0);
   }

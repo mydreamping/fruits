@@ -102,8 +102,11 @@ export default {
       var data = this.total[e].HotWordName;
       console.log('44444444444444',data);
       this.$router.push({ path:'/detail/default', query: { data: data }})
+     
+     
       // console.log(data);
-    }
+    },
+    
   },
   components: {},
   mounted() {
