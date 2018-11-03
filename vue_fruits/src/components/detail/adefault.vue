@@ -93,8 +93,8 @@ export default {
   methods: {
     //获取路由的参数
     getRouterData() {
-      this.listgoods = this.$route.params.data;
-      console.log(this.$route.params.data)
+      this.listgoods = this.$route.query.data;
+      console.log(this.$route.query.data)
       console.log('detail', this.listgoods);
     },
     // 获取数据
@@ -105,7 +105,7 @@ export default {
         method: "GET",
         params: {
           sourcetype: 9,
-          Keyword: "早餐",
+          Keyword: this.listgoods,
           PageIndex: 1,
           PageSize: 20,
           OrderDirectionType: 0,

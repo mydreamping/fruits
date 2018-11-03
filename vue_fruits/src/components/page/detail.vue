@@ -130,17 +130,17 @@ export default {
       }
     },
     // //获取路由的参数
-    getRouterData() {
-      this.listgoods = this.$route.params.data;
-      console.log("detail", this.listgoods);
-    },
+    // getRouterData() {
+    //   this.listgoods = this.$route.params.data;
+    //   console.log("detail", this.listgoods);
+    // },
     // // 获取数据
     // getList() {
     //   var self = this;
     //   this.$http({
     //     method: "GET",
     //     params: {
-    //       sourcetype: 9,
+    //       sourcetype: 9, 
     //       Keyword: "早餐",
     //       PageIndex: 1,
     //       PageSize: 20,
@@ -161,7 +161,7 @@ export default {
     // Adefault
   },
   mounted() {
-    this.getRouterData();
+    // this.getRouterData();
     // this.getList();
     this.tab(0);
   }

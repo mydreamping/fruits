@@ -100,7 +100,8 @@ export default {
     getidx(e) {
       console.log(e);
       var data = this.total[e].HotWordName;
-      this.$router.push({ name: 'detail', params: { data: data }})
+      console.log('44444444444444',data);
+      this.$router.push({ path:'/detail/default', query: { data: data }})
       // console.log(data);
     }
   },

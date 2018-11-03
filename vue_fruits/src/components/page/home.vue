@@ -1,7 +1,7 @@
 <template>
     
     <div class="home">
-      <div v-loading="false" data-mu-loading-overlay-color="rgba(0, 0, 0, .6)" style="position: relative;">
+      <div data-mu-loading-overlay-color="rgba(0, 0, 0, .6)" style="position: relative;">
           <comhead />
           <pannel />
           <comfoot />
