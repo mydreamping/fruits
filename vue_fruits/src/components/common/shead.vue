@@ -5,6 +5,11 @@
         <section   class="mn-section search">
             <div  class="mn-card search-input">
                 <div  class="mn-card-item">
+                    <div class="icon" style="margin-right:.2rem" @click="getHome"> 
+                         <div class="icon-container">
+                              <mu-icon  size="48" value="home"></mu-icon>
+                            </div>
+                    </div>
                     <div  class="mn-card-body">
                         <input  placeholder="搜索生鲜商品" @keyup="getsearch($event)" v-model="value">
                     </div> 
@@ -30,6 +35,13 @@
 <style src="./scss/shead.scss" lang="scss" scoped>
 </style>
 
+<style>
+  .icon-flex-wrap .mu-button {
+  margin: 6px 8px;
+}
+
+</style>
+
 <script>
 export default {
   props: ["message"],
@@ -43,6 +55,11 @@ export default {
   },
 
   methods: {
+    
+    //回到首页
+    getHome(){
+        this.$router.push("/");
+    },
     // 键盘输入时模糊查询
     getsearch(e) {
       //   console.log(555);

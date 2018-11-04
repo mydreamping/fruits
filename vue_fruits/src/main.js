@@ -3,13 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './vuex/store'
 
-import vant from 'vant';
-import 'vant/lib/vant-css/index.css';
-import { Loading } from 'vant';
+// import vant from 'vant';
+// import 'vant/lib/vant-css/index.css';
+// import { Loading } from 'vant';
 
-Vue.use(Loading);
+// Vue.use(Loading);
 
-Vue.use(vant);
+// Vue.use(vant);
 
 // axios的引入及使用
 import axios from 'axios'
@@ -19,6 +19,9 @@ Vue.prototype.$http=axios;
 
 import MuseUI from 'muse-ui';
 import 'muse-ui/dist/muse-ui.css';
+
+
+
 
 // 引入qs模块
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';//全局更改
