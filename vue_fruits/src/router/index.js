@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-
+import  Text from './../components/page/text.vue'
 import  Home from './../components/page/home.vue'
 import  City from './../components/element/city.vue'
 import  Search from './../components/element/search.vue'
@@ -28,6 +28,10 @@ const router = new VueRouter({
         path:'/search',
         name:'search',
         component:Search,        
+    },{
+        path:'/text',
+        name:'text',
+        component:Text,        
     },{
         path:'/detail',
         name:'detail',
