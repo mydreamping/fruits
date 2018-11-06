@@ -1,6 +1,6 @@
 <template>
     <div style="height:100%;" class="price">
-        
+         
               <div class="mn-scroller is-hide-bar">
                 <div class="mn-scroller-contents">
                     <div class="product">
@@ -55,7 +55,7 @@
                 </div>
                 
               </div>
-              <dfoot />
+              <!-- <dfoot /> -->
 
     </div>
 </template>
@@ -72,7 +72,9 @@ export default {
   data() {
     return {
       listgoods:"",//获取存入来的参数
-      list:"",//商品
+      list:[],//商品
+      // loading: false, //向下滚轮刷新
+      // PageIndex: 0,//用于向下加载
       bool:"",
       OrderDirectionType:1, //用来更新价格数据
     };

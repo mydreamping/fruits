@@ -1,6 +1,6 @@
 <template>
     <div style="height:100%;" class="sale">
-        
+        <mu-load-more  :loading="loading" @load="load">
               <div class="mn-scroller is-hide-bar">
                 <div class="mn-scroller-contents">
                     <div class="product">
@@ -55,7 +55,8 @@
                 </div>
                 
               </div>
-              <dfoot />
+         </mu-load-more>
+              <!-- <dfoot /> -->
 
     </div>
 </template>
@@ -72,11 +73,20 @@ export default {
   data() {
     return {
       listgoods:"",//获取存入来的参数
-      list:"",//商品
-     
+      list:[],//商品
+      loading: false, //向下滚轮刷新
+      PageIndex: 0
     };
   },
   methods: {
+     //向下加载
+    load() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.getList();
+      }, 2000);
+    },
     //获取路由的参数
     getRouterData() {
       this.listgoods = this.$route.query.data;
@@ -87,12 +97,13 @@ export default {
     // 获取数据
     getList() {
       var self = this;
+      this.PageIndex++;
       this.$http({
         method: "GET",
         params: {
           sourcetype: 9,
           Keyword: this.listgoods,
-          PageIndex: 1,
+          PageIndex: this.PageIndex,
           PageSize: 20,
           OrderDirectionType: 0,
           OrderFieldType: 3,
@@ -101,8 +112,10 @@ export default {
         url: "/dt/sh/ProductRequests/SearchProductRequest?"
       }).then(function(response) {
         console.log(response);
-        console.log(response.data.Data.SourceData);
-        self.list = response.data.Data.SourceData;
+        // console.log(response.data.Data.SourceData);
+        // self.list = response.data.Data.SourceData;
+        self.list = self.list.concat(response.data.Data.SourceData);
+        console.log(self.list);
       });
     },
   },

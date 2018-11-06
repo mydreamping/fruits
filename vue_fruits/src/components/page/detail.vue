@@ -1,7 +1,7 @@
 <template>
     
     <div class="detail">
-      <div class="deta">
+      <div class="deta" :class="isFixed == true?'isFixed':''" >
           <shead />
           <div>
               <!-- 排序 -->
@@ -98,6 +98,13 @@
 .detail{
   background-color: #f0f0f0;
 }
+.isFixed{
+            position: fixed;
+            top: 0px;
+            z-index: 4;
+            width: 100%;
+            margin-bottom:2rem;
+}
 </style>
 
 
@@ -127,6 +134,7 @@ export default {
       }],
       num: 0,
       bool:false,
+      isFixed:false,
       icon: `<div class="icon">
               <span class="mn-icon" style="width: .5rem; height: .5rem;">
                 <span class="mn-icon-svg" style="width: .5rem; height: .5rem;">
@@ -140,6 +148,21 @@ export default {
     };
   },
   methods: {
+    //获取当前位置
+    getnow() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+        // console.log(scrollTop)
+        
+      if(scrollTop < 500){
+        this.isFixed = false; 
+      }
+      if (scrollTop > 300) {
+        this.isFixed = true;
+      }
+    },
     //选项卡并跳转路由
     tab(index) {
       this.num = index;
@@ -202,6 +225,8 @@ export default {
     // Adefault
   },
   mounted() {
+    //监听滑动
+    window.addEventListener("scroll", this.getnow);
     this.getRouterData();
     // this.getList();
     this.tab(0);

@@ -112,7 +112,7 @@ export default {
         params: {
           sourcetype: 9,
           Keyword: this.listgoods,
-          PageIndex: 1,
+          PageIndex: this.PageIndex,
           PageSize: 20,
           OrderDirectionType: 0,
           OrderFieldType: 0,
