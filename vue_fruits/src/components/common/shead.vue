@@ -5,7 +5,7 @@
         <section   class="mn-section search">
             <div  class="mn-card search-input">
                 <div  class="mn-card-item">
-                    <div class="icon" style="margin-right:.2rem" @click="getHome"> 
+                    <div class="icon" style="margin-right:.2rem" @click="back"> 
                          <div class="icon-container">
                               <mu-icon  size="48" value="home"></mu-icon>
                             </div>
@@ -50,13 +50,16 @@ export default {
       value: "", //input输入的值
       suggest: "", //模糊查询
       goods: "", //搜索值
-      list: [] //搜索记录
+      list: [], //搜索记录
+      listgoods:""
     };
   },
 
   methods: {
-    
-    //回到首页
+    back(){
+        this.$router.go(-1);//返回上一层
+    },
+    //回到首页  
     getHome(){
         this.$router.push("/");
     },
@@ -92,6 +95,9 @@ export default {
       this.setStorage();
       //   子组件向父组件传参
       this.$emit("getlist", ' '+this.list);
+
+      //跳转路由
+      this.$router.push({ name: 'default', query:{ data: this.goods}})
     },
     //设置localstorage
     setStorage() {

@@ -100,7 +100,7 @@ export default {
     getRouterData() {
       this.listgoods = this.$route.query.data;
       console.log(this.$route.query.data);
-      console.log("detail", this.listgoods);
+      console.log("default", this.listgoods);
     },
     // 获取数据
     getList() {
