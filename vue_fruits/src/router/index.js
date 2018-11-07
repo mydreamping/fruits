@@ -12,6 +12,8 @@ import Adefault from './../components/detail/adefault.vue'
 import Anew from './../components/detail/anew.vue'
 import Sale from './../components/detail/sale.vue'
 import Price from './../components/detail/price.vue'
+import Goodpage from './../components/goodpage/Goodpage.vue'
+
 
 const router = new VueRouter({
     routes : [{
@@ -32,6 +34,10 @@ const router = new VueRouter({
         path:'/text',
         name:'text',
         component:Text,        
+    },{
+        path:'/goodpage',
+        name:'goodpage',
+        component:Goodpage,        
     },{
         path:'/detail',
         name:'detail',

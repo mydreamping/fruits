@@ -94,7 +94,7 @@
 <style src="./scss/detail.scss" lang="scss" >
 </style>
 
-<style>
+<style scoped>
 .detail{
   background-color: #f0f0f0;
 }

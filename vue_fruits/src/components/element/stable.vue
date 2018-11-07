@@ -13,7 +13,7 @@
                 <p  class="title">最近搜索</p> 
                 <div  class="lists">
                     <div  class="item"  v-for="(l,index) in list" :key="index">
-                        <p>{{l}}</p> 
+                        <p @click="getlistconent(l)">{{l}}</p> 
                         <span  class="close" @click="deleteStorage(index)">
                             <span  class="mn-icon" style="width: 50px; height: 50px;">
                                 <span class="mn-icon-svg" style="width: 50px; height: 50px;">
@@ -101,12 +101,14 @@ export default {
       console.log(e);
       var data = this.total[e].HotWordName;
       console.log('44444444444444',data);
-      this.$router.push({ path:'/detail/default', query: { data: data }})
-     
-     
+      this.$router.push({ path:'/detail/default', query: { data: data }})   
       // console.log(data);
     },
-    
+    getlistconent(e){
+      // console.log(e);
+      var data = e;
+      this.$router.push({ path:'/detail/default', query: { data: data }})  
+    }
   },
   components: {},
   mounted() {
