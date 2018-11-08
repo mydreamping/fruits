@@ -9,10 +9,11 @@
                 
             </div>
         </div>
-        <div class="tabCon">
-            <div v-show="num===0"><good/></div>
-            <div v-show="num===1"><gooddetail /></div>
-            <div v-show="num===2"><comment /></div>
+        <div class="tabCon" style="margin-bottom:1.3rem;" ref="categoryList">
+          <!-- v-show="num===0" -->
+            <div id="good" ref="good"><good /></div>
+            <div id="comment" ref="comment"><comment /></div>
+            <div id="gooddetail" ref="gooddetail"><gooddetail /></div>
         </div>
 
         
@@ -47,6 +48,7 @@ import comment from "./comment.vue";
 export default {
   data() {
     return {
+      list: "",
       isFixed: false,
       num: 0,
       show: false,
@@ -56,11 +58,11 @@ export default {
           isSelected: true
         },
         {
-          name: "详情",
+          name: "评价",
           isSelected: false
         },
         {
-          name: "评价",
+          name: "详情",
           isSelected: false
         }
       ]
@@ -80,17 +82,39 @@ export default {
         document.body.scrollTop;
       // console.log(scrollTop)
 
-      if (scrollTop < 500) {
-        this.isFixed = false;
-      }
-      if (scrollTop > 300) {
-        this.isFixed = true;
+      //获取所有盒子的高度
+      var totalHeight = this.$refs.categoryList.offsetHeight;
+      //设置当前高度
+      var currentHeight = 0;
+
+      for (var i = 0; i < this.$refs.categoryList.children.length; i++) {
+        currentHeight += this.$refs.categoryList.children[i].offsetHeight;
+
+        if (scrollTop < 500) {
+          this.isFixed = false;
+        }
+        if (scrollTop > 300) {
+          this.isFixed = true;
+        }
+        if (scrollTop + 400 > currentHeight) {
+          this.num = i + 1;
+        }
+        if (scrollTop < 300) {
+          this.num = 0;
+        }
       }
     },
     //选项卡切换
     tab(index) {
       //   console.log(index);
       this.num = index;
+      if (index == 0) {
+        document.querySelector("#good").scrollIntoView(true);
+      } else if (index == 1) {
+        document.querySelector("#comment").scrollIntoView(true);
+      } else if (index == 2) {
+        document.querySelector("#gooddetail").scrollIntoView(true);
+      }
     }
   },
   mounted() {

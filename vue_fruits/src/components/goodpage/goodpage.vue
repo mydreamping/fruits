@@ -1,7 +1,6 @@
 <template>
     <div calss="goodlpage">
         <gheader />
-        
         <gfooter />
 
     </div>
@@ -18,18 +17,23 @@
 import gheader from "./gheader.vue";
 import gfooter from "./gfooter.vue";
 
+
+
 export default {
     data(){
         return {
-
+            
+            
         }
     },
     components:{
         gheader,
-        gfooter
+        gfooter,
+        
     },
     methods:{
-
+       
+    
     },
     mounted(){
 

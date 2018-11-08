@@ -10,7 +10,7 @@
                   <div class="mn-scroller-contents">
                       <div class="product">
 
-                        <div  class="product-item" v-for="(l,index) in list" :key="index">
+                        <div  @click="changerouter(l.ProductId)" :data-id="l.ProductId" class="product-item" v-for="(l,index) in list" :key="index">
                           <div  class="inner">
                             <div  class="image">
                               <div  class="mn-image">
@@ -84,10 +84,17 @@ export default {
       listgoods: "", //获取存入来的参数
       list: [], //商品
       loading: false, //向下滚轮刷新
-      PageIndex: 0
+      PageIndex: 0,
+      ProductId:""
     };
   },
   methods: {
+    //跳转路由
+    changerouter(id){
+      this.ProductId = id;
+      console.log(this.ProductId)
+      this.$router.push({ name: 'goodpage', query:{data: this.ProductId}})
+    },
     //向下加载
     load() {
       this.loading = true;
@@ -125,6 +132,7 @@ export default {
         // self.list = response.data.Data.SourceData;
         self.list = self.list.concat(response.data.Data.SourceData);
         console.log(self.list);
+        
       });
     }
   },
